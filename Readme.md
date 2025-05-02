@@ -20,3 +20,8 @@
    ```bash
    npm install
    ```
+3. **Run**:
+   Use the following command to start the application:
+   ```bash
+   npm start
+   ```
