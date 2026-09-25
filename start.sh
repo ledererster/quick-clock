@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Clock in automatically on launch; pass --no to start clocked out.
+if [[ "${1:-}" == "--no" ]]; then
+  export QUICK_CLOCK_NO_CLOCK_IN=1
+fi
+
 project_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 desktop_dir="${XDG_DATA_HOME:-"${HOME}/.local/share"}/applications"
 desktop_file="${desktop_dir}/io.github.ledererster.quick-clock.desktop"
